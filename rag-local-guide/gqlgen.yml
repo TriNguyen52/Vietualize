@@ -1,0 +1,13 @@
+# gqlgen.yml
+schema:
+  - api/graphql/schema.graphqls
+exec:
+  filename: api/graphql/generated.go
+  package: graphql
+model:
+  filename: api/graphql/models_gen.go
+  package: graphql
+resolver:
+  layout: follow-schema
+  dir: api/graphql
+  package: graphql

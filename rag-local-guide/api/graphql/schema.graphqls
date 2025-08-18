@@ -1,0 +1,39 @@
+type Query {
+    localGuides: [LocalGuide!]!
+    localGuide(id: ID!): LocalGuide
+    searchGuides(query: String!, location: String): [Guide!]!
+}
+
+type Mutation {
+    createLocalGuide(input: CreateLocalGuideInput!): LocalGuide!
+    updateLocalGuide(id: ID!, input: UpdateLocalGuideInput!): LocalGuide!
+    deleteLocalGuide(id: ID!): Boolean!
+}
+
+type LocalGuide {
+    id: ID!
+    title: String!
+    description: String
+    location: String!
+    createdAt: String!
+    updatedAt: String!
+}
+
+input CreateLocalGuideInput {
+    title: String!
+    description: String
+    location: String!
+}
+
+input UpdateLocalGuideInput {
+    title: String
+    description: String
+    location: String
+}
+
+type Guide {
+  id: ID!
+  title: String!
+  content: String!
+  location: String!
+}
